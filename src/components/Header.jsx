@@ -6,7 +6,7 @@ export function Header() {
     <header>
       <div className="nav">
         <a href="#top" aria-label="Kayo International — home">
-          <img src={logo} alt="Kayo International" width="200" height="46" />
+          <img src={logo} alt="Kayo International" width="400" height="180" />
         </a>
         <nav className="nav-links">
           {NAV_LINKS.map((l) => (

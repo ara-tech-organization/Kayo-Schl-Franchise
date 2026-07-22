@@ -743,6 +743,16 @@ header.scrolled {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* In the 2-column band an odd card count leaves the last one stranded in the
+   left cell. :last-child:nth-child(odd) matches only that case (3 cards, not 6),
+   so span it across both columns and centre it at one column's width. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .grid-3 > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 12px);
+    margin-inline: auto;
+  }
+}
 @media (max-width: 860px) {
   .grid-2 {
     grid-template-columns: 1fr;
@@ -1907,10 +1917,12 @@ footer {
   align-items: center;
 }
 footer img {
-  height: 40px;
+  height: 72px;
+  width: auto;
+  flex: none;
   background: #fff;
-  border-radius: 8px;
-  padding: 5px 10px;
+  border-radius: 12px;
+  padding: 8px 20px;
 }
 footer a {
   color: var(--lime);
