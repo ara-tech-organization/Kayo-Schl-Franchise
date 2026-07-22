@@ -326,7 +326,6 @@ export const LEADERS = [
     name: 'Veena Sundaramurthy',
     role: 'Founder · 12+ years in early education',
     body: 'Founded in 2013 by Veena Sundaramurthy, Kayo International was born from her passion for early childhood education and her vision to nurture confident, curious, and creative young learners. Combining expertise in Early Childhood Education and Child Psychology, she developed the NURTURE Lab Curriculum, blending Montessori, STEM, and play-based learning. With a strong foundation of quality, transparency, and innovation, Kayo International provides a trusted preschool environment that prepares children for lifelong success.',
-    video: 'Founder intro video',
   },
   {
     icon: 'user',
@@ -335,7 +334,6 @@ export const LEADERS = [
     name: 'Sankara K',
     role: 'Founder · BITS Pilani · [designation to confirm]',
     body: 'My journey from BITS Pilani inspired a lifelong mission to combine education and technology to transform how schools grow and succeed. I build innovative education solutions, explore emerging opportunities, and help institutions navigate growth with strategic insights. By partnering with school leaders, I turn ambitious ideas into impactful strategies that drive academic and business excellence.',
-    video: 'Founder intro video',
   },
 ]
 

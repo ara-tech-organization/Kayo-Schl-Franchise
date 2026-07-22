@@ -27,14 +27,6 @@ export function Leadership() {
               <h3 style={{ fontSize: 17 }}>{p.name}</h3>
               <span className="leader-role">{p.role}</span>
               <p style={{ fontSize: 13.5, textAlign: 'left' }}>{p.body}</p>
-              {p.video && (
-                <button type="button" className="leader-video">
-                  <i>
-                    <Icon name="play" size={12} />
-                  </i>
-                  {p.video}
-                </button>
-              )}
             </Reveal>
           ))}
         </div>
