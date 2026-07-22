@@ -32,19 +32,39 @@ export function useReveal() {
 export function useScrollSpy(ids) {
   useEffect(() => {
     const rungs = document.querySelectorAll('#ladder .rung')
+    const navLinks = document.querySelectorAll('.nav-links a:not(.btn)')
+    const navIds = [...navLinks].map((a) => a.getAttribute('href').slice(1))
     const header = document.querySelector('header')
     const bar = document.querySelector('.scroll-progress')
     let ticking = false
 
+    /* The nav and the ladder track different id sets — the nav links #faq, which is
+       not a ladder rung — so each resolves its own current section. Picking the
+       furthest-down section that has been passed (rather than the last one in the
+       array) keeps this right when the array order differs from document order.
+       `fallback` wins before anything is passed: the ladder always shows a rung,
+       the nav stays unmarked until the reader reaches its first target. */
+    const currentOf = (list, y, fallback) => {
+      let current = fallback
+      let best = -1
+      list.forEach((id) => {
+        const el = document.getElementById(id)
+        if (el && el.offsetTop <= y && el.offsetTop > best) {
+          best = el.offsetTop
+          current = id
+        }
+      })
+      return current
+    }
+
     const spy = () => {
       ticking = false
       const y = window.scrollY + window.innerHeight * 0.4
-      let current = ids[0]
-      ids.forEach((id) => {
-        const el = document.getElementById(id)
-        if (el && el.offsetTop <= y) current = id
-      })
+      const current = currentOf(ids, y, ids[0])
       rungs.forEach((r) => r.classList.toggle('active', r.dataset.sec === current))
+
+      const navCurrent = currentOf(navIds, y, null)
+      navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${navCurrent}`))
 
       if (header) header.classList.toggle('scrolled', window.scrollY > 8)
       if (bar) {

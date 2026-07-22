@@ -360,10 +360,12 @@ header.scrolled {
   transform-origin: left;
   transition: transform 0.28s var(--ease-out);
 }
-.nav-links a:not(.btn):hover::after {
+.nav-links a:not(.btn):hover::after,
+.nav-links a:not(.btn).active::after {
   transform: scaleX(1);
 }
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--purple);
 }
 /* The header CTA is the one button recoloured away from the reference palette. */
