@@ -1,12 +1,25 @@
-import Reveal from './Reveal'
-import Icon from './Icon'
-import GutterArt from './GutterArt'
-import { WHY_KAYO, PHASES, QUALIFY, ROADMAP, CENTRE_PHOTO, VIDEOS } from '../data/content'
+import Reveal from "./Reveal";
+import Icon from "./Icon";
+import GutterArt from "./GutterArt";
+import {
+  WHY_KAYO,
+  PHASES,
+  QUALIFY,
+  ROADMAP,
+  CENTRE_PHOTO,
+  VIDEOS,
+} from "../data/content";
 
 export function CaseStudy({ onPlayVideo }) {
   return (
     <section id="proof">
-      <GutterArt side="left" motifs={['cloud', 'dot', 'star']} />
+      <GutterArt
+        spots={[
+          ["cloud", "left", "top"],
+          ["star", "right", "bottom"],
+          ["pencil", "right", "top"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Franchisee proof
@@ -15,8 +28,9 @@ export function CaseStudy({ onPlayVideo }) {
           Proof from an owner, not a brochure
         </Reveal>
         <Reveal as="p" className="sec-sub" delay={110}>
-          One detailed case study from a partner who made the same decision you're weighing now. Where exact
-          financials are confidential, indexed ranges are used with the owner's consent.
+          One detailed case study from a partner who made the same decision
+          you're weighing now. Where exact financials are confidential, indexed
+          ranges are used with the owner's consent.
         </Reveal>
 
         <Reveal className="case" dir="scale" delay={80}>
@@ -33,7 +47,12 @@ export function CaseStudy({ onPlayVideo }) {
                   className="play"
                   type="button"
                   aria-label="Play the case study video"
-                  onClick={() => onPlayVideo(VIDEOS.caseStudy, 'Case study — completed projects')}
+                  onClick={() =>
+                    onPlayVideo(
+                      VIDEOS.caseStudy,
+                      "Case study — completed projects",
+                    )
+                  }
                 >
                   <Icon name="play" size={24} />
                 </button>
@@ -41,15 +60,24 @@ export function CaseStudy({ onPlayVideo }) {
             </div>
             <div className="case-caption">
               <strong>Case study — completed projects</strong>
-              <span>Veena Sundaramurthy, M.A. · KAYO International, Chennai · Since 2013</span>
+              <span>
+                Veena Sundaramurthy, M.A. · KAYO International, Chennai · Since
+                2013
+              </span>
             </div>
           </div>
           <div className="case-body">
             <blockquote>
-              "A child's first learning experiences shape a lifetime. That's why every moment at Kayo is
-              designed with care, curiosity, and joy."
+              "A child's first learning experiences shape a lifetime. That's why
+              every moment at Kayo is designed with care, curiosity, and joy."
             </blockquote>
-            <p style={{ fontSize: 13.5, color: 'var(--muted)', marginBottom: 18 }}>
+            <p
+              style={{
+                fontSize: 13.5,
+                color: "var(--muted)",
+                marginBottom: 18,
+              }}
+            >
               — Veena Sundaramurthy, Director
             </p>
             <a className="btn btn-lime" href="#apply" data-cta="case">
@@ -60,12 +88,19 @@ export function CaseStudy({ onPlayVideo }) {
         </Reveal>
       </div>
     </section>
-  )
+  );
 }
 
 export function WhyKayo() {
   return (
-    <section style={{ background: 'var(--lav)' }}>
+    <section style={{ background: "var(--lav)" }}>
+      <GutterArt
+        spots={[
+          ["crayon", "right", "top"],
+          ["balloon", "left", "bottom"],
+          ["star", "left", "center"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Why the Kayo model
@@ -75,7 +110,12 @@ export function WhyKayo() {
         </Reveal>
         <div className="grid-3" style={{ marginTop: 30 }}>
           {WHY_KAYO.map((c, i) => (
-            <Reveal key={c.title} className="card card-hover" dir="scale" delay={(i % 3) * 110}>
+            <Reveal
+              key={c.title}
+              className="card card-hover"
+              dir="scale"
+              delay={(i % 3) * 110}
+            >
               <div className="icon-badge">
                 <Icon name={c.icon} size={24} />
               </div>
@@ -86,12 +126,19 @@ export function WhyKayo() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function SupportMatrix() {
   return (
     <section id="support">
+      <GutterArt
+        spots={[
+          ["arrow", "left", "top"],
+          ["pencil", "right", "bottom"],
+          ["block", "right", "top"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Execution support
@@ -100,7 +147,8 @@ export function SupportMatrix() {
           Seven phases. Clear owners. No grey zones.
         </Reveal>
         <Reveal as="p" className="sec-sub" delay={110}>
-          Every phase names what Kayo provides, what you fund or do, and the output that gates the next step.
+          Every phase names what Kayo provides, what you fund or do, and the
+          output that gates the next step.
         </Reveal>
 
         <Reveal className="matrix" delay={80}>
@@ -124,12 +172,19 @@ export function SupportMatrix() {
         </Reveal>
       </div>
     </section>
-  )
+  );
 }
 
 export function Qualification() {
   return (
-    <section style={{ background: 'var(--lav)' }}>
+    <section style={{ background: "var(--lav)" }}>
+      <GutterArt
+        spots={[
+          ["block", "right", "top"],
+          ["cloud", "left", "bottom"],
+          ["dot", "left", "top"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Self-qualification
@@ -169,13 +224,19 @@ export function Qualification() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function Roadmap() {
   return (
     <section>
-      <GutterArt side="right" motifs={['crayon', 'dot', 'block']} />
+      <GutterArt
+        spots={[
+          ["arrow", "left", "top"],
+          ["crayon", "right", "bottom"],
+          ["star", "right", "center"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           From enquiry to opening day
@@ -189,18 +250,22 @@ export function Roadmap() {
               key={s.title}
               className="step-card"
               delay={(i % 4) * 90}
-              style={s.highlight ? { background: 'var(--lav)' } : undefined}
+              style={s.highlight ? { background: "var(--lav)" } : undefined}
             >
               <span
                 className="wk"
-                style={s.highlight ? { background: 'var(--lime)', color: 'var(--purple-deep)' } : undefined}
+                style={
+                  s.highlight
+                    ? { background: "var(--lime)", color: "var(--purple-deep)" }
+                    : undefined
+                }
               >
                 {s.wk}
               </span>
               <h4>{s.title}</h4>
               <p>{s.body}</p>
               <div className="gate">
-                <b>{s.gate.startsWith('KPI') ? '' : 'Gate: '}</b>
+                <b>{s.gate.startsWith("KPI") ? "" : "Gate: "}</b>
                 {s.gate}
               </div>
             </Reveal>
@@ -211,5 +276,5 @@ export function Roadmap() {
         </p>
       </div>
     </section>
-  )
+  );
 }

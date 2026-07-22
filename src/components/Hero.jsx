@@ -1,12 +1,18 @@
-import Reveal from './Reveal'
-import Icon from './Icon'
-import GutterArt from './GutterArt'
-import { HERO_BULLETS, PROOF_STATS, FOUNDERS, VIDEOS } from '../data/content'
+import Reveal from "./Reveal";
+import Icon from "./Icon";
+import GutterArt from "./GutterArt";
+import { HERO_BULLETS, PROOF_STATS, FOUNDERS, VIDEOS } from "../data/content";
 
 export function Hero({ onGetBrochure, onPlayVideo }) {
   return (
     <section className="hero" id="top">
-      <GutterArt side="left" motifs={['block', 'dot', 'crayon', 'dot', 'star']} />
+      <GutterArt
+        spots={[
+          ["block", "left", "top"],
+          ["crayon", "left", "bottom"],
+          ["star", "right", "center"],
+        ]}
+      />
       <div className="wrap hero-grid">
         <div>
           <Reveal as="span" className="tag-lime" delay={60}>
@@ -28,13 +34,19 @@ export function Hero({ onGetBrochure, onPlayVideo }) {
               Check Franchise Availability
               <Icon name="arrow-right" size={18} />
             </a>
-            <button type="button" className="btn btn-ghost" data-cta="hero-brochure" onClick={onGetBrochure}>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              data-cta="hero-brochure"
+              onClick={onGetBrochure}
+            >
               <Icon name="file-text" size={18} />
               Get a Brochure
             </button>
           </Reveal>
           <Reveal as="p" className="microcopy" delay={360}>
-            ✓ No obligation — a city-fit check, not a sales commitment. Response within 1 working day.
+            ✓ No obligation — a city-fit check, not a sales commitment. Response
+            within 1 working day.
           </Reveal>
         </div>
 
@@ -43,7 +55,13 @@ export function Hero({ onGetBrochure, onPlayVideo }) {
             {FOUNDERS.map((f) => (
               <div className="founder" key={f.name}>
                 {f.photo ? (
-                  <img className="founder-photo" src={f.photo} alt={f.name} width="66" height="66" />
+                  <img
+                    className="founder-photo"
+                    src={f.photo}
+                    alt={f.name}
+                    width="66"
+                    height="66"
+                  />
                 ) : (
                   <div className="founder-photo" aria-hidden="true">
                     {f.initials}
@@ -60,7 +78,9 @@ export function Hero({ onGetBrochure, onPlayVideo }) {
               <button
                 type="button"
                 className="founder-video"
-                onClick={() => onPlayVideo(VIDEOS.founder, 'Intro Video of Founders')}
+                onClick={() =>
+                  onPlayVideo(VIDEOS.founder, "Intro Video of Founders")
+                }
               >
                 <Icon name="play" size={15} />
                 Intro Video of Founders
@@ -79,25 +99,37 @@ export function Hero({ onGetBrochure, onPlayVideo }) {
         </Reveal>
       </div>
     </section>
-  )
+  );
 }
 
 export function ProofBar() {
   return (
     <section className="proofbar" id="trust">
+      <GutterArt
+        tone="light"
+        spots={[
+          ["star", "left", "center"],
+          ["balloon", "right", "center"],
+        ]}
+      />
       <div className="wrap">
         <div className="proof-grid">
           {PROOF_STATS.map((s, i) => (
-            <Reveal key={s.label} className={s.wide ? 'wide' : ''} delay={i * 90}>
+            <Reveal
+              key={s.label}
+              className={s.wide ? "wide" : ""}
+              delay={i * 90}
+            >
               <b>{s.value}</b>
               <span>{s.label}</span>
             </Reveal>
           ))}
         </div>
         <p className="proof-note">
-          *Centre and city counts to be inserted from verified operating data before launch.
+          *Centre and city counts to be inserted from verified operating data
+          before launch.
         </p>
       </div>
     </section>
-  )
+  );
 }

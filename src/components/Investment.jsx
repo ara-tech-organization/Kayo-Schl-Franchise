@@ -1,12 +1,18 @@
-import Reveal from './Reveal'
-import Icon from './Icon'
-import GutterArt from './GutterArt'
-import { OPPORTUNITY, SNAPSHOT, INCLUSIONS, SCENARIOS } from '../data/content'
+import Reveal from "./Reveal";
+import Icon from "./Icon";
+import GutterArt from "./GutterArt";
+import { OPPORTUNITY, SNAPSHOT, INCLUSIONS, SCENARIOS } from "../data/content";
 
 export function Opportunity() {
   return (
-    <section style={{ background: 'var(--lav)' }}>
-      <GutterArt side="right" motifs={['balloon', 'dot', 'plane']} />
+    <section style={{ background: "var(--lav)" }}>
+      <GutterArt
+        spots={[
+          ["balloon", "right", "top"],
+          ["crayon", "left", "bottom"],
+          ["star", "left", "top"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           The opportunity
@@ -17,13 +23,19 @@ export function Opportunity() {
           not a one-time bet
         </Reveal>
         <Reveal as="p" className="sec-sub" delay={110}>
-          Preschool fees renew every academic year. A well-run Kayo centre builds a compounding local base:
-          enrolled families stay for 2–4 years, refer siblings and neighbours, and fill the next batch before
-          it opens.
+          Preschool fees renew every academic year. A well-run Kayo centre
+          builds a compounding local base: enrolled families stay for 2–4 years,
+          refer siblings and neighbours, and fill the next batch before it
+          opens.
         </Reveal>
         <div className="grid-3">
           {OPPORTUNITY.map((c, i) => (
-            <Reveal key={c.title} className="card card-hover" dir="scale" delay={i * 110}>
+            <Reveal
+              key={c.title}
+              className="card card-hover"
+              dir="scale"
+              delay={i * 110}
+            >
               <div className="icon-badge">
                 <Icon name={c.icon} size={24} />
               </div>
@@ -34,12 +46,19 @@ export function Opportunity() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function Investment() {
   return (
     <section id="economics">
+      <GutterArt
+        spots={[
+          ["pencil", "left", "top"],
+          ["cloud", "right", "bottom"],
+          ["star", "right", "top"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Investment transparency
@@ -48,8 +67,8 @@ export function Investment() {
           Can I afford this — and what exactly do I get?
         </Reveal>
         <Reveal as="p" className="sec-sub" delay={110}>
-          The full picture, including what is <b>not</b> covered by the franchise fee. No partial ranges, no
-          surprises at agreement stage.
+          The full picture, including what is <b>not</b> covered by the
+          franchise fee. No partial ranges, no surprises at agreement stage.
         </Reveal>
 
         <div className="grid-2">
@@ -68,7 +87,7 @@ export function Investment() {
                 {SNAPSHOT.map((r) => (
                   <tr key={r.item}>
                     <td>{r.item}</td>
-                    <td className={`num${r.inc ? ' inc' : ''}`}>{r.detail}</td>
+                    <td className={`num${r.inc ? " inc" : ""}`}>{r.detail}</td>
                   </tr>
                 ))}
               </tbody>
@@ -89,8 +108,8 @@ export function Investment() {
               <tbody>
                 {INCLUSIONS.map(([inc, exc], i) => (
                   <tr key={i}>
-                    <td className="inc">{inc ? `✓ ${inc}` : ''}</td>
-                    <td className="exc">{exc ? `✗ ${exc}` : ''}</td>
+                    <td className="inc">{inc ? `✓ ${inc}` : ""}</td>
+                    <td className="exc">{exc ? `✗ ${exc}` : ""}</td>
                   </tr>
                 ))}
               </tbody>
@@ -99,12 +118,22 @@ export function Investment() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export function Scenarios({ onGetBrochure }) {
   return (
-    <section className="scen" style={{ background: 'var(--lav)', paddingTop: 56 }}>
+    <section
+      className="scen"
+      style={{ background: "var(--lav)", paddingTop: 56 }}
+    >
+      <GutterArt
+        spots={[
+          ["arrow", "right", "top"],
+          ["block", "left", "bottom"],
+          ["dot", "left", "center"],
+        ]}
+      />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Unit economics
@@ -113,15 +142,16 @@ export function Scenarios({ onGetBrochure }) {
           Three scenarios. Stated assumptions. No magic.
         </Reveal>
         <Reveal as="p" className="sec-sub" delay={110}>
-          Illustrative models — final figures to be approved by Kayo leadership before publishing. Break-even
-          is expressed in enrolled students so you can pressure-test it against your own city.
+          Illustrative models — final figures to be approved by Kayo leadership
+          before publishing. Break-even is expressed in enrolled students so you
+          can pressure-test it against your own city.
         </Reveal>
 
         <div className="grid-3">
           {SCENARIOS.map((s, i) => (
             <Reveal
               key={s.title}
-              className={`card card-hover${s.mid ? ' mid' : ''}`}
+              className={`card card-hover${s.mid ? " mid" : ""}`}
               dir="scale"
               delay={i * 120}
             >
@@ -142,9 +172,10 @@ export function Scenarios({ onGetBrochure }) {
           ))}
         </div>
 
-        <p className="microcopy" style={{ marginTop: 20, textAlign: 'center' }}>
-          Disclaimer: scenario models are illustrative examples based on stated assumptions, not a guarantee or
-          promise of returns. Actual results vary by city, premises, fees and operator involvement.
+        <p className="microcopy" style={{ marginTop: 20, textAlign: "center" }}>
+          Disclaimer: scenario models are illustrative examples based on stated
+          assumptions, not a guarantee or promise of returns. Actual results
+          vary by city, premises, fees and operator involvement.
         </p>
 
         <Reveal className="cta-row" delay={80}>
@@ -152,12 +183,17 @@ export function Scenarios({ onGetBrochure }) {
             Check Franchise Availability
             <Icon name="arrow-right" size={18} />
           </a>
-          <button type="button" className="btn btn-ghost" data-cta="brochure" onClick={onGetBrochure}>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            data-cta="brochure"
+            onClick={onGetBrochure}
+          >
             <Icon name="file-text" size={18} />
             Get Brochure
           </button>
         </Reveal>
       </div>
     </section>
-  )
+  );
 }

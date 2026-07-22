@@ -2,7 +2,7 @@
    Stroke icons inherit `currentColor`; `solid` icons are filled instead. */
 
 const STROKE = {
-  'trending-up': (
+  "trending-up": (
     <>
       <polyline points="23 6 13.5 16.5 8.5 11.5 1 19" />
       <polyline points="17 6 23 6 23 12" />
@@ -29,7 +29,7 @@ const STROKE = {
       <circle cx="17.5" cy="17.5" r="2.5" />
     </>
   ),
-  'book-open': (
+  "book-open": (
     <>
       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
@@ -42,21 +42,21 @@ const STROKE = {
       <circle cx="12" cy="12" r="2" />
     </>
   ),
-  'graduation-cap': (
+  "graduation-cap": (
     <>
       <path d="M22 10v6" />
       <path d="M2 10l10-5 10 5-10 5z" />
       <path d="M6 12v5c3 2.5 9 2.5 12 0v-5" />
     </>
   ),
-  'clipboard-check': (
+  "clipboard-check": (
     <>
       <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
       <rect x="8" y="2" width="8" height="4" rx="1" />
       <path d="m9 14 2 2 4-4" />
     </>
   ),
-  'map-pin': (
+  "map-pin": (
     <>
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
       <circle cx="12" cy="10" r="3" />
@@ -81,7 +81,7 @@ const STROKE = {
       <polyline points="12 6 12 12 16 14" />
     </>
   ),
-  'message-circle': (
+  "message-circle": (
     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z" />
   ),
   lock: (
@@ -93,7 +93,7 @@ const STROKE = {
   phone: (
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
   ),
-  'file-text': (
+  "file-text": (
     <>
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
       <polyline points="14 2 14 8 20 8" />
@@ -113,7 +113,7 @@ const STROKE = {
       <circle cx="12" cy="7" r="4" />
     </>
   ),
-  'alert-triangle': (
+  "alert-triangle": (
     <>
       <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
       <line x1="12" y1="9" x2="12" y2="13" />
@@ -133,14 +133,14 @@ const STROKE = {
       <line x1="6" y1="6" x2="18" y2="18" />
     </>
   ),
-  'arrow-right': (
+  "arrow-right": (
     <>
       <line x1="5" y1="12" x2="19" y2="12" />
       <polyline points="12 5 19 12 12 19" />
     </>
   ),
-  'chevron-left': <polyline points="15 18 9 12 15 6" />,
-  'chevron-right': <polyline points="9 18 15 12 9 6" />,
+  "chevron-left": <polyline points="15 18 9 12 15 6" />,
+  "chevron-right": <polyline points="9 18 15 12 9 6" />,
   mail: (
     <>
       <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -155,7 +155,7 @@ const STROKE = {
       <line x1="3" y1="10" x2="21" y2="10" />
     </>
   ),
-}
+};
 
 const SOLID = {
   play: <polygon points="6 3 20 12 6 21 6 3" />,
@@ -165,12 +165,12 @@ const SOLID = {
   whatsapp: (
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.945c0 2.096.548 4.142 1.588 5.945L0 24l6.305-1.654a11.9 11.9 0 0 0 5.734 1.46h.005c6.585 0 11.946-5.359 11.949-11.945a11.9 11.9 0 0 0-3.473-8.413" />
   ),
-}
+};
 
-export default function Icon({ name, size = 22, className = '', ...rest }) {
-  const solid = SOLID[name]
-  const body = solid ?? STROKE[name]
-  if (!body) return null
+export default function Icon({ name, size = 22, className = "", ...rest }) {
+  const solid = SOLID[name];
+  const body = solid ?? STROKE[name];
+  if (!body) return null;
 
   return (
     <svg
@@ -178,8 +178,8 @@ export default function Icon({ name, size = 22, className = '', ...rest }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill={solid ? 'currentColor' : 'none'}
-      stroke={solid ? 'none' : 'currentColor'}
+      fill={solid ? "currentColor" : "none"}
+      stroke={solid ? "none" : "currentColor"}
       strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -189,5 +189,5 @@ export default function Icon({ name, size = 22, className = '', ...rest }) {
     >
       {body}
     </svg>
-  )
+  );
 }

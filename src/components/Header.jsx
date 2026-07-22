@@ -1,5 +1,5 @@
-import logo from '../assets/kayo-logo.png'
-import { NAV_LINKS } from '../data/content'
+import logo from "../assets/kayo-logo.png";
+import { NAV_LINKS } from "../data/content";
 
 export function Header() {
   return (
@@ -21,5 +21,5 @@ export function Header() {
       </div>
       <div className="scroll-progress" aria-hidden="true" />
     </header>
-  )
+  );
 }

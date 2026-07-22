@@ -426,52 +426,86 @@ header.scrolled {
 /* ---------- gutter art ---------- */
 /* Preschool line-art motifs parked in the empty column beside the content.
    Hidden until the gutter is wide enough to hold them without crowding. */
+/* Each motif is positioned on its own, so a section can carry one icon top-right
+   and another bottom-left rather than a stack in a single spot. */
 .gutter-art {
   display: none;
+  /* Distance from the content column, nudged per anchor so the motifs never
+     line up in one straight rail. */
+  --ga-x: 104px;
 }
 @media (min-width: 1400px) {
   .gutter-art {
-    display: grid;
-    justify-items: center;
-    align-content: center;
-    gap: 26px;
+    display: block;
+    line-height: 0;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 0;
     pointer-events: none;
+    color: var(--purple);
+    opacity: 0.32;
+    /* Not translateY(-50%) for centring: floatY owns this element's transform. */
+    top: 46%;
+    animation: floatY 8s ease-in-out infinite;
   }
   .gutter-art-left {
-    left: calc((100% - 1120px) / 2 - 104px);
+    left: calc((100% - 1120px) / 2 - var(--ga-x));
   }
   .gutter-art-right {
-    right: calc((100% - 1120px) / 2 - 104px);
+    right: calc((100% - 1120px) / 2 - var(--ga-x));
+  }
+  .gutter-art-top {
+    --ga-x: 118px;
+    top: 14%;
+  }
+  .gutter-art-bottom {
+    --ga-x: 92px;
+    top: auto;
+    bottom: 13%;
   }
 }
-.gutter-art > span {
-  display: block;
-  line-height: 0;
-  color: var(--purple);
-  opacity: 0.28;
-  animation: floatY 8s ease-in-out infinite;
-}
-.gutter-art > span:nth-child(3n) {
+/* Lime accent on every other motif, and a tilt so they don't all sit upright.
+   The tilt lives on the svg because floatY owns the span's transform. */
+.gutter-art.ga-accent {
   color: var(--lime);
   opacity: 0.62;
+}
+.gutter-art.ga-t0 svg {
+  transform: rotate(-9deg);
+}
+.gutter-art.ga-t1 svg {
+  transform: rotate(8deg);
+}
+.gutter-art.ga-t2 svg {
+  transform: rotate(-4deg);
+}
+.gutter-art.ga-t1 {
   animation-duration: 10s;
   animation-delay: 1.2s;
 }
-.gutter-art > span:nth-child(3n + 2) {
+.gutter-art.ga-t2 {
   animation-duration: 9s;
   animation-delay: 0.6s;
 }
-.gutter-art > span.ga-dot {
+.gutter-art.ga-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: var(--lav2);
   opacity: 1;
   animation: none;
+}
+/* Inverted palette for the purple sections. */
+.gutter-art-light {
+  color: #fff;
+  opacity: 0.22;
+}
+.gutter-art-light.ga-accent {
+  color: var(--lime);
+  opacity: 0.5;
+}
+.gutter-art-light.ga-dot {
+  background: rgba(255, 255, 255, 0.32);
+  opacity: 1;
 }
 
 .hero-grid {
