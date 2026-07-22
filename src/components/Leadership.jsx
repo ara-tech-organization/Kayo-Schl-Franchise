@@ -18,7 +18,7 @@ export function Leadership() {
           {LEADERS.map((p, i) => (
             <Reveal key={p.name} className="card card-hover leader-card" dir="scale" delay={i * 110}>
               {p.photo ? (
-                <img className="leader-avatar" src={p.photo} alt={p.name} loading="lazy" />
+                <img className="leader-avatar" src={p.photo} alt={p.name} loading="lazy" decoding="async" />
               ) : (
                 <div className="leader-avatar">
                   {p.initials ? p.initials : <Icon name={p.icon} size={30} />}

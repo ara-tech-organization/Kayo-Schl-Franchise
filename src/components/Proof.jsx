@@ -20,7 +20,12 @@ export function CaseStudy({ onPlayVideo }) {
         <Reveal className="case" dir="scale" delay={80}>
           <div className="case-photo">
             <div className="case-shot">
-              <img src={CENTRE_PHOTO} alt="A Kayo International class with their teachers" loading="lazy" />
+              <img
+                src={CENTRE_PHOTO}
+                alt="A Kayo International class with their teachers"
+                loading="lazy"
+                decoding="async"
+              />
               {VIDEOS.caseStudy && (
                 <button
                   className="play"

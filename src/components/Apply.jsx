@@ -64,7 +64,7 @@ export function Footer() {
       </div>
       <footer>
         <div className="wrap foot-grid">
-          <img src={logo} alt="Kayo International" width="400" height="180" />
+          <img src={logo} alt="Kayo International" width="400" height="180" loading="lazy" decoding="async" />
           <div>
             Kayo International · Perungudi, Chennai · Saravanampatti, Coimbatore
             <br />
