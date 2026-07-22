@@ -49,7 +49,7 @@ export const FOUNDERS = [
     name: 'Sankara K',
     initials: 'SK',
     photo: sankaraPhoto,
-    title: 'Founder — [designation to confirm]',
+    title: 'Founder',
     note: 'BITS Pilani. Builds the education-technology and growth systems behind Kayo.',
   },
 ]
@@ -332,7 +332,7 @@ export const LEADERS = [
     initials: 'SK',
     photo: sankaraPhoto,
     name: 'Sankara K',
-    role: 'Founder · BITS Pilani · [designation to confirm]',
+    role: 'Founder · BITS Pilani',
     body: 'My journey from BITS Pilani inspired a lifelong mission to combine education and technology to transform how schools grow and succeed. I build innovative education solutions, explore emerging opportunities, and help institutions navigate growth with strategic insights. By partnering with school leaders, I turn ambitious ideas into impactful strategies that drive academic and business excellence.',
   },
 ]
