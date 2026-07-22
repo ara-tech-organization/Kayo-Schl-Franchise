@@ -749,6 +749,10 @@ header.scrolled {
 @media (min-width: 641px) and (max-width: 900px) {
   .grid-3 > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
+    /* auto margins disable grid stretch, so the item would fall back to
+       fit-content — narrow cards then shrink below one column. Force full
+       width and let max-width do the capping. */
+    width: 100%;
     max-width: calc(50% - 12px);
     margin-inline: auto;
   }
