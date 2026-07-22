@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Reveal from './Reveal'
 import Icon from './Icon'
+import GutterArt from './GutterArt'
 import { LEADERS, AWARDS, FAQS } from '../data/content'
 
 export function Leadership() {
@@ -110,6 +111,7 @@ export function Faq() {
 
   return (
     <section id="faq">
+      <GutterArt side="left" motifs={['plane', 'dot', 'balloon']} />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Before you enquire

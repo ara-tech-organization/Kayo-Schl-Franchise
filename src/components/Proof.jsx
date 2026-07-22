@@ -1,10 +1,12 @@
 import Reveal from './Reveal'
 import Icon from './Icon'
+import GutterArt from './GutterArt'
 import { WHY_KAYO, PHASES, QUALIFY, ROADMAP, CENTRE_PHOTO, VIDEOS } from '../data/content'
 
 export function CaseStudy({ onPlayVideo }) {
   return (
     <section id="proof">
+      <GutterArt side="left" motifs={['cloud', 'dot', 'star']} />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           Franchisee proof
@@ -173,6 +175,7 @@ export function Qualification() {
 export function Roadmap() {
   return (
     <section>
+      <GutterArt side="right" motifs={['crayon', 'dot', 'block']} />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           From enquiry to opening day

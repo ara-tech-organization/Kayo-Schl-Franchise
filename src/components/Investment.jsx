@@ -1,10 +1,12 @@
 import Reveal from './Reveal'
 import Icon from './Icon'
+import GutterArt from './GutterArt'
 import { OPPORTUNITY, SNAPSHOT, INCLUSIONS, SCENARIOS } from '../data/content'
 
 export function Opportunity() {
   return (
     <section style={{ background: 'var(--lav)' }}>
+      <GutterArt side="right" motifs={['balloon', 'dot', 'plane']} />
       <div className="wrap">
         <Reveal as="span" className="eyebrow">
           The opportunity

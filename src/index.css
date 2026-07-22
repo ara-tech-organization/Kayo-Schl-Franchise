@@ -423,6 +423,57 @@ header.scrolled {
   right: -60px;
   animation: floatY 11s ease-in-out infinite reverse;
 }
+/* ---------- gutter art ---------- */
+/* Preschool line-art motifs parked in the empty column beside the content.
+   Hidden until the gutter is wide enough to hold them without crowding. */
+.gutter-art {
+  display: none;
+}
+@media (min-width: 1400px) {
+  .gutter-art {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 26px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .gutter-art-left {
+    left: calc((100% - 1120px) / 2 - 104px);
+  }
+  .gutter-art-right {
+    right: calc((100% - 1120px) / 2 - 104px);
+  }
+}
+.gutter-art > span {
+  display: block;
+  line-height: 0;
+  color: var(--purple);
+  opacity: 0.28;
+  animation: floatY 8s ease-in-out infinite;
+}
+.gutter-art > span:nth-child(3n) {
+  color: var(--lime);
+  opacity: 0.62;
+  animation-duration: 10s;
+  animation-delay: 1.2s;
+}
+.gutter-art > span:nth-child(3n + 2) {
+  animation-duration: 9s;
+  animation-delay: 0.6s;
+}
+.gutter-art > span.ga-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lav2);
+  opacity: 1;
+  animation: none;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 0.94fr;

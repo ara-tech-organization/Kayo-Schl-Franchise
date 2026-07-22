@@ -1,10 +1,12 @@
 import Reveal from './Reveal'
 import Icon from './Icon'
+import GutterArt from './GutterArt'
 import { HERO_BULLETS, PROOF_STATS, FOUNDERS, VIDEOS } from '../data/content'
 
 export function Hero({ onGetBrochure, onPlayVideo }) {
   return (
     <section className="hero" id="top">
+      <GutterArt side="left" motifs={['block', 'dot', 'crayon', 'dot', 'star']} />
       <div className="wrap hero-grid">
         <div>
           <Reveal as="span" className="tag-lime" delay={60}>
