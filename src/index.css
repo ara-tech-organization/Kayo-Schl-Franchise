@@ -219,6 +219,11 @@ section {
   align-items: center;
   gap: 8px;
 }
+/* Without this the icon is a flex item with default shrink and collapses to a
+   sliver next to long text — worse the narrower the viewport. */
+.icon-inline > svg {
+  flex: 0 0 auto;
+}
 /* Block-level hosts must stay full-width, so opt them out of inline-flex. */
 .callout.icon-inline {
   display: flex;
