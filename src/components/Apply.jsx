@@ -73,10 +73,14 @@ export function Footer() {
               {CONTACT.site}
             </a>
           </div>
-          <div style={{ textAlign: 'right' }}>
-            CRO rebuild concept by <b style={{ color: '#fff' }}>ARA Discover Marketing</b>
-            <br />
-            Discover • Strategize • Dominate
+          <div className="foot-credit">
+            <Icon name="heart" size={15} />
+            <span>
+              crafted by{' '}
+              <a href="https://discovertechnologies.co/" target="_blank" rel="noreferrer">
+                Ara Discover Technology
+              </a>
+            </span>
           </div>
         </div>
       </footer>

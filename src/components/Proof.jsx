@@ -160,13 +160,6 @@ export function Qualification() {
             </ul>
           </Reveal>
         </div>
-        <Reveal className="callout icon-inline" style={{ marginTop: 26, alignItems: 'flex-start' }} delay={120}>
-          <Icon name="shield" size={20} style={{ color: '#B8860B', marginTop: 2 }} />
-          <span>
-            <b>Urgency note (legitimate scarcity only):</b> Territory availability is real scarcity — one
-            operator per catchment. No countdown timers, no fake "3 slots left."
-          </span>
-        </Reveal>
       </div>
     </section>
   )

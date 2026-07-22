@@ -95,15 +95,6 @@ export function Investment() {
             </table>
           </Reveal>
         </div>
-
-        <Reveal className="callout icon-inline" delay={120} style={{ alignItems: 'flex-start' }}>
-          <Icon name="alert-triangle" size={20} style={{ color: '#B8860B', marginTop: 2 }} />
-          <span>
-            <b>Compliance note:</b> No unqualified "2X return" claims anywhere on the page. All return
-            statements are model-based scenarios with stated assumptions — approved by Kayo leadership and
-            legal before publishing.
-          </span>
-        </Reveal>
       </div>
     </section>
   )
