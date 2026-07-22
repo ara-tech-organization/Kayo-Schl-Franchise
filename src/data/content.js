@@ -61,15 +61,6 @@ export const NAV_LINKS = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-export const LADDER = [
-  { id: 'top', label: 'Attention' },
-  { id: 'trust', label: 'Trust' },
-  { id: 'economics', label: 'Economics' },
-  { id: 'support', label: 'Risk removal' },
-  { id: 'proof', label: 'Proof' },
-  { id: 'apply', label: 'Action' },
-]
-
 export const HERO_BULLETS = [
   { strong: '₹15 lakh', rest: ' all-in investment range — inclusions listed openly below' },
   { strong: 'No royalty', rest: ' operating model — recurring fees explained line by line' },

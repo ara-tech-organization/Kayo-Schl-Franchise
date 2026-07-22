@@ -1,5 +1,5 @@
 import logo from '../assets/kayo-logo.png'
-import { NAV_LINKS, LADDER } from '../data/content'
+import { NAV_LINKS } from '../data/content'
 
 export function Header() {
   return (
@@ -21,18 +21,5 @@ export function Header() {
       </div>
       <div className="scroll-progress" aria-hidden="true" />
     </header>
-  )
-}
-
-export function Ladder() {
-  return (
-    <nav id="ladder" aria-label="Investor decision ladder">
-      {LADDER.map((r) => (
-        <a className="rung" href={`#${r.id}`} data-sec={r.id} key={r.id}>
-          <span className="dot" />
-          <span className="lbl">{r.label}</span>
-        </a>
-      ))}
-    </nav>
   )
 }

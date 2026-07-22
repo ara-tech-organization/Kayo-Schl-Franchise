@@ -138,32 +138,13 @@ export function ContactRail({ onContact }) {
   )
 }
 
-/* Fires 10 seconds after the visitor first interacts with the page. */
+/* Fires 5 seconds after the page opens — on every load, including refreshes. */
 export function PopupForm({ variant, onOpen, onClose }) {
   const closeRef = useRef(null)
 
   useEffect(() => {
-    if (sessionStorage.getItem('kayoPopupSeen')) return
-
-    const events = ['scroll', 'mousemove', 'keydown', 'touchstart', 'click']
-    let timer
-
-    // The 10s countdown starts on the visitor's first interaction, not on load.
-    const start = () => {
-      if (timer) return
-      timer = setTimeout(() => {
-        sessionStorage.setItem('kayoPopupSeen', '1')
-        onOpen('auto')
-      }, 10000)
-      events.forEach((e) => window.removeEventListener(e, start))
-    }
-
-    events.forEach((e) => window.addEventListener(e, start, { passive: true }))
-
-    return () => {
-      clearTimeout(timer)
-      events.forEach((e) => window.removeEventListener(e, start))
-    }
+    const timer = setTimeout(() => onOpen('auto'), 5000)
+    return () => clearTimeout(timer)
   }, [onOpen])
 
   useEffect(() => {

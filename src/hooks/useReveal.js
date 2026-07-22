@@ -28,22 +28,19 @@ export function useReveal() {
   }, [])
 }
 
-/* Tracks which ladder section is currently in view + overall scroll progress. */
-export function useScrollSpy(ids) {
+/* Tracks which nav section is currently in view + overall scroll progress. */
+export function useScrollSpy() {
   useEffect(() => {
-    const rungs = document.querySelectorAll('#ladder .rung')
     const navLinks = document.querySelectorAll('.nav-links a:not(.btn)')
     const navIds = [...navLinks].map((a) => a.getAttribute('href').slice(1))
     const header = document.querySelector('header')
     const bar = document.querySelector('.scroll-progress')
     let ticking = false
 
-    /* The nav and the ladder track different id sets — the nav links #faq, which is
-       not a ladder rung — so each resolves its own current section. Picking the
-       furthest-down section that has been passed (rather than the last one in the
-       array) keeps this right when the array order differs from document order.
-       `fallback` wins before anything is passed: the ladder always shows a rung,
-       the nav stays unmarked until the reader reaches its first target. */
+    /* Picks the furthest-down section that has been passed (rather than the last
+       one in the array), which keeps this right when the array order differs from
+       document order. `fallback` wins before anything is passed, so the nav stays
+       unmarked until the reader reaches its first target. */
     const currentOf = (list, y, fallback) => {
       let current = fallback
       let best = -1
@@ -60,9 +57,6 @@ export function useScrollSpy(ids) {
     const spy = () => {
       ticking = false
       const y = window.scrollY + window.innerHeight * 0.4
-      const current = currentOf(ids, y, ids[0])
-      rungs.forEach((r) => r.classList.toggle('active', r.dataset.sec === current))
-
       const navCurrent = currentOf(navIds, y, null)
       navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${navCurrent}`))
 
@@ -86,7 +80,7 @@ export function useScrollSpy(ids) {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
     }
-  }, [ids])
+  }, [])
 }
 
 /* Counts up to a numeric target once the element scrolls into view.

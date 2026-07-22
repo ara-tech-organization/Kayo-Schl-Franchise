@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { Header, Ladder } from './components/Header'
+import { Header } from './components/Header'
 import { Hero, ProofBar } from './components/Hero'
 import { Opportunity, Investment, Scenarios } from './components/Investment'
 import { CaseStudy, WhyKayo, SupportMatrix, Qualification, Roadmap } from './components/Proof'
@@ -7,17 +7,15 @@ import { Leadership, Faq } from './components/Leadership'
 import { Apply, Footer, StickyBar, ContactRail, PopupForm } from './components/Apply'
 import VideoModal from './components/VideoModal'
 import { useReveal, useScrollSpy } from './hooks/useReveal'
-import { LADDER, CONTACT } from './data/content'
-
-const LADDER_IDS = LADDER.map((r) => r.id)
+import { CONTACT } from './data/content'
 
 export default function App() {
-  // null = closed, 'auto' = 10s timer, 'brochure' = a "Get a Brochure" CTA
+  // null = closed, 'auto' = 5s timer, 'brochure' = a "Get a Brochure" CTA
   const [popup, setPopup] = useState(null)
   const [video, setVideo] = useState(null)
 
   useReveal()
-  useScrollSpy(LADDER_IDS)
+  useScrollSpy()
 
   // Guard against being wired straight to an onClick, which would pass an event.
   const openPopup = useCallback((variant) => setPopup(typeof variant === 'string' ? variant : 'auto'), [])
@@ -35,7 +33,6 @@ export default function App() {
   return (
     <>
       <Header />
-      <Ladder />
 
       <main>
         <Hero onGetBrochure={getBrochure} onPlayVideo={playVideo} />
